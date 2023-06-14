@@ -3,7 +3,7 @@
 import { ADD_USER } from '../actions';
 
 const INITIAL_STATE = {
-  email: '',
+  email: 'lechatpapel@gmail.com',
 };
 
 const user = (state = INITIAL_STATE, action) => {
