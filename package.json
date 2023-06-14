@@ -49,6 +49,7 @@
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "0.3.3",
     "@trybe/eslint-config-frontend": "^1.7.1",
+    "@types/react-router-dom": "^5.3.3",
     "cypress": "10.11.0",
     "cypress-multi-reporters": "1.6.2",
     "jest-localstorage-mock": "2.4.26",
