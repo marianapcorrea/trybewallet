@@ -17,7 +17,7 @@ const requestCurrencies = () => ({
   type: REQUEST_CURRENCIES,
 });
 
-const receiveCurrencies = (currencies) => ({
+export const receiveCurrencies = (currencies) => ({
   type: RECEIVE_CURRENCIES,
   currencies,
 });
