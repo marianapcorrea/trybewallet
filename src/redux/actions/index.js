@@ -7,6 +7,7 @@ export const RECEIVE_CURRENCIES = 'RECEIVE_CURRENCIES';
 export const REQUEST_CURRENCIES_FAILURE = 'REQUEST_CURRENCIES_FAILURE';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const GET_TOTAL = 'GET_TOTAL';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const addUser = (user) => ({
   type: ADD_USER,
@@ -44,4 +45,9 @@ export const actionAddExpense = (expenses) => ({
 export const actionGetTotal = (totalExpenses) => ({
   type: GET_TOTAL,
   totalExpenses,
+});
+
+export const actionDeleteExpense = (id) => ({
+  type: DELETE_EXPENSE,
+  id,
 });
