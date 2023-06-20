@@ -8,14 +8,12 @@ export const REQUEST_CURRENCIES_FAILURE = 'REQUEST_CURRENCIES_FAILURE';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const GET_TOTAL = 'GET_TOTAL';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const SAVE_EDITION = 'SAVE_EDITION';
 
 export const addUser = (user) => ({
   type: ADD_USER,
   payload: user,
-});
-
-const requestCurrencies = () => ({
-  type: REQUEST_CURRENCIES,
 });
 
 export const receiveCurrencies = (currencies) => ({
@@ -23,18 +21,9 @@ export const receiveCurrencies = (currencies) => ({
   currencies,
 });
 
-const requestCurrenciesFailure = () => ({
-  type: REQUEST_CURRENCIES_FAILURE,
-});
-
 export const actionFetchCurrencies = () => async (dispatch) => {
-  dispatch(requestCurrencies());
-  try {
-    const currencies = await fetchCurrencies();
-    dispatch(receiveCurrencies(currencies));
-  } catch (error) {
-    dispatch(requestCurrenciesFailure());
-  }
+  const currencies = await fetchCurrencies();
+  dispatch(receiveCurrencies(currencies));
 };
 
 export const actionAddExpense = (expenses) => ({
@@ -50,4 +39,14 @@ export const actionGetTotal = (totalExpenses) => ({
 export const actionDeleteExpense = (id) => ({
   type: DELETE_EXPENSE,
   id,
+});
+
+export const actionEditExpense = (id) => ({
+  type: EDIT_EXPENSE,
+  id,
+});
+
+export const actionSaveEditions = (expense) => ({
+  type: SAVE_EDITION,
+  expense,
 });

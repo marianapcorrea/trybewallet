@@ -1,33 +1,24 @@
-import { ADD_EXPENSE, DELETE_EXPENSE, GET_TOTAL, RECEIVE_CURRENCIES, REQUEST_CURRENCIES,
-  REQUEST_CURRENCIES_FAILURE } from '../actions';
+import {
+  ADD_EXPENSE, DELETE_EXPENSE, EDIT_EXPENSE, GET_TOTAL,
+  RECEIVE_CURRENCIES,
+  SAVE_EDITION } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
   currencies: [], // array de string
   expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
-  editor: false, // valor booleano que indica de uma despesa está sendo editada
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
   totalExpenses: 0,
-  loading: false,
+  inEdition: false,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case REQUEST_CURRENCIES:
-    return {
-      ...state,
-      loading: true,
-    };
   case RECEIVE_CURRENCIES:
     return {
       ...state,
       loading: false,
       currencies: action.currencies,
-    };
-  case REQUEST_CURRENCIES_FAILURE:
-    return {
-      ...state,
-      loading: false,
     };
   case ADD_EXPENSE:
     return {
@@ -44,6 +35,24 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: state.expenses.filter((expense) => expense.id !== action.id),
+    };
+
+  case EDIT_EXPENSE:
+    return {
+      ...state,
+      inEdition: true,
+      idToEdit: action.id,
+    };
+
+  case SAVE_EDITION:
+    return {
+      ...state,
+      inEdition: false,
+      expenses: [
+        ...state.expenses.filter((expenseItem) => (expenseItem.id === action.expense.id
+          ? action.expense : expenseItem)).sort((a, b) => a.id - b.id),
+      ],
+
     };
 
   default:

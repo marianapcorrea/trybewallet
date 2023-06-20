@@ -14,7 +14,6 @@ class Header extends Component {
     const total = expenses ? expenses
       .reduce((acc, curr) => {
         const currencyValue = this.getCurrencyValue(curr);
-        console.log(curr.value);
         return acc + (currencyValue.ask * curr.value);
       }, 0).toFixed(2)
       : 0;
@@ -59,7 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  totalExpenses: PropTypes.string.isRequired,
+  totalExpenses: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   expenses: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   getTotalExpenses: PropTypes.func.isRequired,
 };
