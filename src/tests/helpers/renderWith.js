@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
 import thunk from 'redux-thunk';
 import rootReducer from '../../redux/reducers';
 
-function withRouter(component, history) {
+/* function withRouter(component, history) {
   return (
     <Router history={ history }>
       { component }
@@ -58,4 +58,24 @@ export function renderWithRouterAndRedux(component, options = {}) {
     ...renderWithRedux(withRouter(component, history), options),
     history,
   };
-}
+} */
+
+export const renderWithRouterAndRedux = (
+  component,
+  {
+    initialState = {},
+    store = createStore(rootReducer, initialState, applyMiddleware(thunk)),
+    initialEntries = ['/'],
+    history = createMemoryHistory({ initialEntries }),
+  } = {},
+) => ({
+  ...render(
+    <Router history={ history }>
+      <Provider store={ store }>
+        {component}
+      </Provider>
+    </Router>,
+  ),
+  store,
+  history,
+});

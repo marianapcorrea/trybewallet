@@ -1,4 +1,4 @@
-import { fetchCurrenciesObjects } from '../services/economyAPI';
+import { fetchCurrencies, fetchCurrenciesObjects } from '../services/economyAPI';
 import mockData from './helpers/mockData';
 
 describe('fetchDataFromAPI', () => {
@@ -13,9 +13,16 @@ describe('fetchDataFromAPI', () => {
     window.fetch.mockRestore();
   });
 
-  it('deve retornar os dados da API corretamente', async () => {
+  it('deve retornar os dados da API corretamente com a função fetchCurrenciesObjects', async () => {
     const result = await fetchCurrenciesObjects();
 
     expect(result).toEqual(mockData);
+  });
+
+  it('deve retornar os dados da API corretamente com a função fetchCurrencies', async () => {
+    const mockArray = ['USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH', 'XRP', 'DOGE'];
+    const result = await fetchCurrencies();
+
+    expect(result).toEqual(mockArray);
   });
 });

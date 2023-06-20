@@ -1,8 +1,10 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import WalletForm from '../components/WalletForm';
+import { actionAddExpense } from '../redux/actions';
 
 describe('Header', () => {
   const emailId = 'email-field';
@@ -70,5 +72,18 @@ describe('WalletForm', () => {
     });
 
     expect(valueInput.value).toBe('30');
+  });
+
+  it.skip('expects to dispatch the action "actionAddExpense" when the addExpense button is called', () => {
+    const mockDispatch = jest.fn();
+    jest.spyOn(useDispatch).mockReturnValue(mockDispatch);
+
+    renderWithRouterAndRedux(<WalletForm />);
+
+    act(() => {
+      userEvent.click(screen.getByText('Adicionar despesa'));
+    });
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionAddExpense());
   });
 });
