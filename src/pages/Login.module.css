@@ -1,0 +1,90 @@
+.container {
+  align-items: center;
+  background-color: var(--light-purple);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  text-align: center;
+  width: 40vw;
+}
+
+.titleContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.imgContainer {
+  align-items: center;
+  background-color: var(--green);
+  border-radius: 5px;
+  display: flex;
+  height: 1.75rem;
+  justify-content: center;
+  margin-right: 0.25rem;
+  width: 1.75rem;
+}
+
+img {
+  height: 2rem;
+  width: 2rem;
+}
+
+h1 {
+  color: var(--dark-purple);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+h1 span {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input , .sendButton {
+  border: 1px solid var(--green);
+  border-radius: 3px;
+  width: 30vw;
+}
+
+.input {
+  background: white;
+  box-sizing: border-box;
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.input::placeholder {
+  color: var(--green);
+}
+
+.sendButton {
+  background-color: var(--green);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.sendButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.sendButton:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+

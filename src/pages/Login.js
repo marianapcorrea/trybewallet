@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addUser } from '../redux/actions';
 import handleValidation from '../services/validateForm';
+import styles from './Login.module.css';
+import moneyWithWings from '../images/emoji_money-with-wings.png';
 
 class Login extends React.Component {
   state = {
@@ -31,10 +33,22 @@ class Login extends React.Component {
   render() {
     const { email, password, disabled } = this.state;
     return (
-      <section>
-        <h1>Login</h1>
-        <form>
+      <section className={ styles.container }>
+        <section className={ styles.titleContainer }>
+          <span className={ styles.imgContainer }>
+            <img
+              alt="Maço de dinheiro com asas"
+              src={ moneyWithWings }
+            />
+          </span>
+          <h1>
+            Trybe
+            <span>Wallet</span>
+          </h1>
+        </section>
+        <form className={ styles.form }>
           <input
+            className={ styles.input }
             type="text"
             data-testid="email-input"
             placeholder="my-email@email.com"
@@ -43,6 +57,7 @@ class Login extends React.Component {
             onChange={ this.handleChange }
           />
           <input
+            className={ styles.input }
             type="password"
             data-testid="password-input"
             placeholder="******"
@@ -51,6 +66,7 @@ class Login extends React.Component {
             onChange={ this.handleChange }
           />
           <button
+            className={ styles.sendButton }
             type="button"
             disabled={ disabled }
             onClick={ this.handleClick }
