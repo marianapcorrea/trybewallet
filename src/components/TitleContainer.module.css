@@ -1,0 +1,35 @@
+.titleContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.imgContainer {
+  align-items: center;
+  background-color: var(--green);
+  border-radius: 5px;
+  display: flex;
+  height: 1.75rem;
+  justify-content: center;
+  margin-right: 0.25rem;
+  width: 1.75rem;
+}
+
+img {
+  height: 2rem;
+  width: 2rem;
+}
+
+h1 {
+  color: var(--dark-purple);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+h1 span {
+  color: var(--green);
+  font-weight: 700;
+}

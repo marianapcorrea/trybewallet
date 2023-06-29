@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { addUser } from '../redux/actions';
 import handleValidation from '../services/validateForm';
 import styles from './Login.module.css';
-import moneyWithWings from '../images/emoji_money-with-wings.png';
+import TitleContainer from '../components/TitleContainer';
 
 class Login extends React.Component {
   state = {
@@ -34,18 +34,7 @@ class Login extends React.Component {
     const { email, password, disabled } = this.state;
     return (
       <section className={ styles.container }>
-        <section className={ styles.titleContainer }>
-          <span className={ styles.imgContainer }>
-            <img
-              alt="Maço de dinheiro com asas"
-              src={ moneyWithWings }
-            />
-          </span>
-          <h1>
-            Trybe
-            <span>Wallet</span>
-          </h1>
-        </section>
+        <TitleContainer />
         <form className={ styles.form }>
           <input
             className={ styles.input }

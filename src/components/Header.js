@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionGetTotal } from '../redux/actions';
+import TitleContainer from './TitleContainer';
 
 class Header extends Component {
   componentDidUpdate(prevProps) {
@@ -28,7 +29,7 @@ class Header extends Component {
 
     return (
       <header>
-        <h1>Wallet</h1>
+        <TitleContainer />
         <span data-testid="email-field">{email}</span>
 
         <p>
