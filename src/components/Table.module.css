@@ -2,16 +2,13 @@
   color: var(--light-grey);
   font-size: 0.65rem;
   font-weight: 400;
-  height: 20rem;
-  overflow-y: scroll;
   padding: 1rem 2.5rem;
   text-align: center;
   width: 100%;
-
 }
 
 .tableHeader {
-  position: sticky;
+  position: relative;
   width: 100%;
 }
 
