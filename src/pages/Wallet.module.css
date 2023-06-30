@@ -6,9 +6,8 @@
   display: flex;
   flex-direction: column;
   font-weight: 700;
-  height: 50vh;
+  height: fit-content;
   justify-content: center;
-  padding: 3rem;
   position: absolute;
   text-align: center;
   top: 0;

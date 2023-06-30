@@ -4,7 +4,8 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: fit-content;
+  padding-bottom: 1.5rem;
   text-align: center;
   width: 40vw;
 }
@@ -17,38 +18,11 @@
 }
 
 .input , .sendButton {
-  border: 1px solid var(--green);
-  border-radius: 3px;
   width: 30vw;
 }
 
 .input {
-  background: white;
-  box-sizing: border-box;
-  color: var(--green);
-  font-size: 0.75rem;
-  font-weight: 400;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-}
-
-.input::placeholder {
-  color: var(--green);
-}
-
-.sendButton {
-  background-color: var(--green);
-  color: white;
-  padding: 0.5rem 1rem;
-}
-
-.sendButton:disabled {
-  cursor: not-allowed;
-  opacity: 0.8;
-}
-
-.sendButton:hover {
-  cursor: pointer;
-  font-weight: 700;
 }
 

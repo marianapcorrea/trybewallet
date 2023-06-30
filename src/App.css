@@ -13,7 +13,7 @@
 
   --green: #185f16;
 
-  --wallet-text: whitesmoke;
+  --light-grey: whitesmoke;
 }
 
 body {
@@ -29,5 +29,42 @@ body {
   height: 100vh;
   justify-content: center;
   width: 100vw;
+}
+
+input , select , button {
+  border: 1px solid var(--green);
+  border-radius: 3px;
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+input {
+  background: white;
+  box-sizing: border-box;
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+input::placeholder {
+  color: var(--green);
+}
+
+button {
+  background-color: var(--green);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+button:hover {
+  cursor: pointer;
+  font-weight: 700;
 }
 

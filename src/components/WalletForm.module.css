@@ -1,0 +1,50 @@
+.mainContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.formContainer {
+  background-color: var(--light-grey);
+  padding: 1rem 2.5rem 0;
+}
+
+.formTitle {
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.fieldContainer {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input {
+  margin-right: 1rem;
+  padding: 0.25rem;
+  width: 5rem;
+}
+
+.input:first-child {
+  background-color: red;
+  width: 4rem;
+}
+
+.description {
+  flex-grow: 1;
+}
+
+.description input {
+  margin-right: 0;
+  width: 100%;
+}
+
+.sendButton {
+  margin: 1rem 0;
+}

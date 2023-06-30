@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { actionAddExpense, actionFetchCurrencies,
   actionSaveEditions } from '../redux/actions';
 import { fetchCurrenciesObjects } from '../services/economyAPI';
+import styles from './WalletForm.module.css';
 
 const tags = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
 const methods = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
@@ -82,40 +83,56 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
 
     return (
-      <main>
-        <h2>{!inEdition ? 'Adicionar' : 'Editar'}</h2>
-        <form>
-          <div>
-            <label htmlFor="value">Despesa:</label>
-            <input
-              type="number"
-              name="value"
-              value={ value }
-              data-testid="value-input"
-              onChange={ this.handleInputChange }
-            />
+      <section className={ styles.mainContainer }>
+        <h2 className={ `${styles.formTitle} ${styles.formContainer}` }>
+          {!inEdition ? 'Adicionar' : 'Editar'}
+        </h2>
+        <form className={ styles.formContainer }>
+          <div className={ styles.form }>
+            <div className={ styles.fieldContainer }>
+              <label
+                htmlFor="value"
+              >
+                Valor da Despesa:
+              </label>
+              <input
+                className={ styles.input }
+                type="number"
+                name="value"
+                value={ value }
+                data-testid="value-input"
+                onChange={ this.handleInputChange }
+              />
+            </div>
+            <div className={ `${styles.fieldContainer} ${styles.description}` }>
+              <label
+                htmlFor="description"
+              >
+                Descrição:
+              </label>
+              <input
+                className={ styles.input }
+                type="text"
+                name="description"
+                value={ description }
+                data-testid="description-input"
+                onChange={ this.handleInputChange }
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="description">Descrição:</label>
-            <input
-              type="text"
-              name="description"
-              value={ description }
-              data-testid="description-input"
-              onChange={ this.handleInputChange }
-            />
-          </div>
-          <div>
-            <label htmlFor="currency">Moeda:</label>
-            <select
-              name="currency"
-              data-testid="currency-input"
-              value={ currency }
-              onChange={ this.handleInputChange }
-            >
-              currencyItem
-              {
-                currencies
+
+          <div className={ styles.form }>
+            <div className={ styles.fieldContainer }>
+              <label htmlFor="currency">Moeda:</label>
+              <select
+                name="currency"
+                data-testid="currency-input"
+                value={ currency }
+                onChange={ this.handleInputChange }
+              >
+                currencyItem
+                {
+                  currencies
             && currencies.map((currencyItem) => (
               <option
                 value={ currencyItem }
@@ -123,52 +140,55 @@ class WalletForm extends Component {
               >
                 {currencyItem }
               </option>))
-              }
-            </select>
+                }
+              </select>
+            </div>
+            <div className={ styles.fieldContainer }>
+              <label htmlFor="method">Metodo de pagamento:</label>
+              <select
+                name="method"
+                data-testid="method-input"
+                value={ method }
+                onChange={ this.handleInputChange }
+              >
+                { methods.map((methodItem) => (
+                  <option
+                    value={ methodItem }
+                    key={ methodItem }
+                  >
+                    {methodItem}
+                  </option>))}
+              </select>
+            </div>
+            <div className={ styles.fieldContainer }>
+              <label htmlFor="tag">Categoria:</label>
+              <select
+                name="tag"
+                data-testid="tag-input"
+                value={ tag }
+                onChange={ this.handleInputChange }
+              >
+                { tags.map((tagItem) => (
+                  <option
+                    value={ tagItem }
+                    key={ tagItem }
+                  >
+                    {tagItem}
+                  </option>))}
+              </select>
+            </div>
           </div>
-          <div>
-            <label htmlFor="method">Metodo de pagamento:</label>
-            <select
-              name="method"
-              data-testid="method-input"
-              value={ method }
-              onChange={ this.handleInputChange }
-            >
-              { methods.map((methodItem) => (
-                <option
-                  value={ methodItem }
-                  key={ methodItem }
-                >
-                  {methodItem}
-                </option>))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="tag">Categoria:</label>
-            <select
-              name="tag"
-              data-testid="tag-input"
-              value={ tag }
-              onChange={ this.handleInputChange }
-            >
-              { tags.map((tagItem) => (
-                <option
-                  value={ tagItem }
-                  key={ tagItem }
-                >
-                  {tagItem}
-                </option>))}
-            </select>
-          </div>
-          <button
-            type="button"
-            onClick={ !inEdition ? this.handleAddClick : this.handleEditClick }
-          >
-            {!inEdition ? 'Adicionar despesa' : 'Editar Despesa'}
 
-          </button>
         </form>
-      </main>
+        <button
+          className={ styles.sendButton }
+          type="button"
+          onClick={ !inEdition ? this.handleAddClick : this.handleEditClick }
+        >
+          {!inEdition ? 'Adicionar despesa' : 'Editar Despesa'}
+
+        </button>
+      </section>
     );
   }
 }
