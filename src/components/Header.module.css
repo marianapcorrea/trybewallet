@@ -1,0 +1,37 @@
+.headerContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.85rem;
+  justify-content: space-around;
+  padding: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.totalContainer , .emailField {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.totalContainer:before {
+  content: url('../images/coin.png');
+  padding-right: 0.25rem;
+}
+
+.totalField {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.emailField {
+  color: var(--green);
+  opacity: 0.9;
+
+}
+
+.emailField:before {
+  content: url('../images/user.png');
+  padding-right: 0.25rem;
+}

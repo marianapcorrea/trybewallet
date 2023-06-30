@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionGetTotal } from '../redux/actions';
 import TitleContainer from './TitleContainer';
+import styles from './Header.module.css';
 
 class Header extends Component {
   componentDidUpdate(prevProps) {
@@ -28,18 +29,25 @@ class Header extends Component {
     const { email, totalExpenses } = this.props;
 
     return (
-      <header>
+      <header className={ styles.headerContainer }>
         <TitleContainer />
-        <span data-testid="email-field">{email}</span>
-
-        <p>
-          Despesas Totais:
-          R$
-          <span data-testid="total-field">
-            {totalExpenses}
-          </span>
-        </p>
-        <span data-testid="header-currency-field">Câmbio: BRL</span>
+        <div className={ styles.totalContainer }>
+          <p>
+            Despesas Totais:
+            <span className={ styles.totalField }>R$</span>
+            <span data-testid="total-field" className={ styles.totalField }>
+              {totalExpenses}
+            </span>
+            <span
+              data-testid="header-currency-field"
+              className={ styles.totalField }
+            >
+              {' '}
+              BRL
+            </span>
+          </p>
+        </div>
+        <span data-testid="email-field" className={ styles.emailField }>{email}</span>
       </header>
     );
   }

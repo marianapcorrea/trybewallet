@@ -1,0 +1,16 @@
+.formContainer {
+  align-items: center;
+  background-color: var(--light-purple);
+  border-radius: 10px;
+  color: var(--dark-purple);
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  height: 50vh;
+  justify-content: center;
+  padding: 3rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 75vw;
+}
