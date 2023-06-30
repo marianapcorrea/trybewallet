@@ -4,7 +4,7 @@
   flex-direction: row;
   font-size: 0.85rem;
   justify-content: space-around;
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
   width: 100%;
 }

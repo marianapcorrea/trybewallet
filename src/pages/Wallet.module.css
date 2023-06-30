@@ -1,15 +1,27 @@
-.formContainer {
+.mainContent {
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.formContainer {
   background-color: var(--light-purple);
   border-radius: 10px;
   color: var(--dark-purple);
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
   font-weight: 700;
-  height: fit-content;
-  justify-content: center;
+  position: relative;
+  width: 85vw;
+}
+
+.tableContainer {
+  background-color: var(--medium-purple);
+  border-radius: 10px;
+  padding-top: 12rem;
   position: absolute;
-  text-align: center;
-  top: 0;
-  width: 75vw;
+  top: 20%;
+  width: 95vw;
+  z-index: -1;
 }

@@ -1,0 +1,73 @@
+.tableContainer {
+  color: var(--light-grey);
+  font-size: 0.65rem;
+  font-weight: 400;
+  height: 20rem;
+  overflow-y: scroll;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  width: 100%;
+
+}
+
+.tableHeader {
+  position: sticky;
+  width: 100%;
+}
+
+.tableHeader tr th {
+  padding: 0.5rem 0;
+  width: 3rem;
+}
+
+.tableHeader tr th:not( :last-child ) {
+  border-right: 1px solid var(--light-grey);
+}
+
+.line {
+  border: none;
+  position: absolute;
+  width: 100%;
+}
+
+.tableHeader .line {
+  background-color: var(--light-grey);
+  height: 2px;
+}
+
+.tableBody {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.tableBody tr td {
+  padding: 0.5rem;
+  width: 3rem;
+}
+
+.tableBody .line {
+  background-color: var(--dark-purple);
+  height: 1px;
+}
+
+.tableBody button {
+  background-color: transparent;
+  border: none;
+  font-size: 0.65rem;
+  padding: 0;
+}
+
+.btnEdit {
+  color: #48c544;
+  margin-right: 0.5rem;
+}
+
+.btnDelete {
+  color: #ea6565;
+}
+
+.btnEdit:hover , .btnDelete:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -7,12 +7,14 @@ import styles from './Wallet.module.css';
 class Wallet extends React.Component {
   render() {
     return (
-      <main>
+      <main className={ styles.mainContent }>
         <section className={ styles.formContainer }>
           <Header />
           <WalletForm />
         </section>
-        <Table />
+        <section className={ styles.tableContainer }>
+          <Table />
+        </section>
       </main>
     );
   }

@@ -5,6 +5,7 @@
 
 .formContainer {
   background-color: var(--light-grey);
+  font-size: 0.85rem;
   padding: 1rem 2.5rem 0;
 }
 
@@ -26,14 +27,9 @@
 }
 
 .input {
-  margin-right: 1rem;
+  margin-right: 0.75rem;
   padding: 0.25rem;
   width: 5rem;
-}
-
-.input:first-child {
-  background-color: red;
-  width: 4rem;
 }
 
 .description {
@@ -47,4 +43,10 @@
 
 .sendButton {
   margin: 1rem 0;
+}
+
+select {
+  color: var(--green);
+  font-size: 0.85rem;
+  padding: 0.25rem;
 }

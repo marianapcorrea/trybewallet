@@ -9,16 +9,24 @@
 
   --light-purple: #d0cbcb;
 
+  --medium-purple: #6a5c81;
+
   --dark-purple: #100c29;
+
+  --greysh-purple: #444955;
 
   --green: #185f16;
 
   --light-grey: whitesmoke;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   align-items: center;
-  background-color: var(--vivid-purple);
+  background-color: var(--greysh-purple);
   background-image: url('./images/background-image.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,8 +34,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Epilogue, sans-serif;
-  height: 100vh;
-  justify-content: center;
   width: 100vw;
 }
 
